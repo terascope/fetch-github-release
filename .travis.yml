@@ -2,20 +2,23 @@
 dist: bionic
 language: node_js
 node_js:
-  - '10'
   - '12'
+  - '14'
 branches:
   only:
-  - master
-  - "/^v\\d+\\.\\d+\\.\\d+/"
+    - master
+    - "/^v\\d+\\.\\d+\\.\\d+/"
 install:
-- yarn
+  - yarn
+before_script:
+  - yarn build
 script:
-- stty cols 80
-- yarn test:cov
-- yarn build:lib
+  - stty cols 80
+  - yarn test
+after_script:
+  - yarn lint
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: npm
   email: ci@terascope.io

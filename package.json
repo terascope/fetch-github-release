@@ -3,21 +3,27 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.7.9",
+  "version": "0.8.0",
   "description": "Download a specific release from github",
+  "files": [
+    "bin/*",
+    "dist/src/**/*"
+  ],
   "main": "lib/index.js",
-  "typings": "index.d.ts",
+  "typings": "dist/src/index.d.ts",
   "scripts": {
-    "test": "mocha --require @babel/polyfill --require @babel/register --require should --recursive",
-    "test:cov": "babel-node ./node_modules/isparta/bin/isparta cover ./node_modules/mocha/bin/_mocha -- --recursive --require should --require should",
-    "lint": "eslint src test",
-    "check": "npm run lint && npm run test",
-    "build:lib": "babel src --out-dir lib",
+    "build": " tsc --project tsconfig.json",
+    "build:watch": "yarn build --watch",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts .",
+    "lint:fix": "yarn lint --fix",
+    "setup": "yarn && yarn build",
+    "test": "jest",
+    "test:cov": "jest --collectCoverage",
+    "test:watch": "jest --coverage=false --notify --watch --onlyChanged",
+    "test:debug": "env DEBUG=\"${DEBUG:-*teraslice*}\" jest --detectOpenHandles --coverage=false --runInBand",
+    "check": "yarn run lint && yarn run test",
     "clean": "rimraf lib coverage",
-    "preversion": "npm run clean && npm run check",
-    "version": "npm run build:lib",
-    "postversion": "git push && git push --tags && npm run clean",
-    "prepublishOnly": "npm run clean && npm run build:lib"
+    "prepublishOnly": "yarn run clean && yarn run build"
   },
   "bin": {
     "fetch-github-release": "bin/fetch-github-release"
@@ -37,35 +43,28 @@
     "url": "https://github.com/terascope/fetch-github-release/issues"
   },
   "dependencies": {
-    "commander": "^7.0.0",
-    "core-js": "^3.6.5",
     "extract-zip": "^2.0.1",
     "gauge": "^3.0.0",
     "got": "^11.4.0",
     "multi-progress": "^4.0.0",
     "progress": "^2.0.3",
-    "regenerator-runtime": "^0.13.5"
+    "yargs": "^17.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.4",
-    "@babel/core": "^7.10.4",
-    "@babel/node": "^7.10.4",
-    "@babel/polyfill": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/register": "^7.10.4",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^5.8.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
-    "isparta": "^4.0.0",
-    "mocha": "^8.0.1",
+    "@terascope/eslint-config": "^0.6.1",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.2",
+    "@types/stream-buffers": "^3.0.4",
+    "@types/tmp": "^0.2.1",
+    "eslint": "^7.32.0",
+    "jest": "^27.2.4",
+    "jest-extended": "^0.11.5",
     "nock": "^13.0.2",
+    "node-notifier": "^10.0.0",
     "rimraf": "^3.0.0",
-    "should": "^13.2.3",
-    "sinon": "^11.1.1",
     "stream-buffers": "^3.0.0",
-    "tmp": "0.2.1"
+    "tmp": "0.2.1",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.3"
   }
 }
