@@ -8,6 +8,8 @@
         "skipLibCheck": true,
         "experimentalDecorators": true,
         "declaration": true,
+        "declarationMap": true,
+        "forceConsistentCasingInFileNames": true,
         "strict": true,
         "sourceMap": true,
         "inlineSourceMap": false,

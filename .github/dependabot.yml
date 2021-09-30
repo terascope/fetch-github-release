@@ -1,15 +1,15 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: monthly
-    time: "04:00"
-    timezone: US/Arizona
-  open-pull-requests-limit: 3
-  assignees:
-  - peterdemartini
-  ignore:
-  - dependency-name: "@babel/preset-env"
-    versions:
-    - 7.13.8
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: monthly
+      time: '04:00'
+      timezone: US/Arizona
+    open-pull-requests-limit: 3
+    assignees:
+      - peterdemartini
+    ignore:
+      - dependency-name: '@babel/preset-env'
+        versions:
+          - 7.13.8
