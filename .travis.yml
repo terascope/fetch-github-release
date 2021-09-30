@@ -19,11 +19,15 @@ after_script:
   - yarn lint
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+before_deploy:
+  - yarn run clean
+  - yarn run build
+  - ls -la ./dist/
 deploy:
   provider: npm
   email: ci@terascope.io
-  api_key: $NPM_TOKEN
-  skip_cleanup: true
+  api_token: $NPM_TOKEN
+  cleanup: false
   on:
     tags: true
     repo: terascope/fetch-github-release
