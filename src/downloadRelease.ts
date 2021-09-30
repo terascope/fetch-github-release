@@ -33,6 +33,12 @@ export async function downloadRelease(
     leaveZipped = false,
     disableLogging = false,
 ): Promise<string[]> {
+    if (!user) {
+        throw new Error('Missing user argument');
+    }
+    if (!repo) {
+        throw new Error('Missing user argument');
+    }
     const bars = new MultiProgress(process.stderr);
 
     const releases = await getReleases(user, repo);
