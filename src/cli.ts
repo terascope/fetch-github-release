@@ -1,6 +1,5 @@
 import yargs from 'yargs';
 import { downloadRelease } from './downloadRelease';
-import { version } from '../package.json';
 import { GithubRelease, GithubReleaseAsset } from './interfaces';
 
 const command = yargs
@@ -41,7 +40,6 @@ const command = yargs
         description: 'The directory to download the assets to',
         type: 'string',
     })
-    .version(version)
     .argv;
 
 const user = command._[0];

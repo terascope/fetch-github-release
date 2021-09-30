@@ -1,5 +1,4 @@
 import got, { OptionsOfJSONResponseBody } from 'got';
-import { name } from '../package.json';
 import { GithubRelease } from './interfaces';
 
 const { GITHUB_TOKEN } = process.env;
@@ -9,7 +8,7 @@ export async function getReleases(user: string, repo: string): Promise<GithubRel
 
     const requestConfig: OptionsOfJSONResponseBody = {
         headers: {
-            'User-Agent': name
+            'User-Agent': '@terascope/fetch-github-release'
         } as Record<string, string>,
         responseType: 'json'
     };

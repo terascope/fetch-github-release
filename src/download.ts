@@ -2,7 +2,6 @@ import http from 'http';
 import https from 'https';
 import { Writable } from 'stream';
 import URL from 'url';
-import { name } from '../package.json';
 
 const { GITHUB_TOKEN } = process.env;
 
@@ -10,7 +9,7 @@ function getRequestOptions(urlString: string) {
     const url = URL.parse(urlString);
     const headers: Record<string, string> = {
         Accept: 'application/octet-stream',
-        'User-Agent': name,
+        'User-Agent': '@terascope/fetch-github-release',
     };
 
     if (GITHUB_TOKEN) {
