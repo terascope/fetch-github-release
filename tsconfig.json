@@ -7,14 +7,14 @@
         "target": "es2019",
         "skipLibCheck": true,
         "experimentalDecorators": true,
+        "declaration": true,
         "strict": true,
         "sourceMap": true,
         "inlineSourceMap": false,
         "noImplicitReturns": true,
         "preserveConstEnums": true,
         "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "suppressImplicitAnyIndexErrors": true
+        "resolveJsonModule": true
     },
     "include": [
         "src/**/*",
