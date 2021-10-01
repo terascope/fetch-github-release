@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.8.6",
+  "version": "0.8.7",
   "description": "Download a specific release from github",
   "files": [
     "dist/src/**/*",
@@ -12,7 +12,7 @@
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
   "scripts": {
-    "build": " tsc --project tsconfig.json",
+    "build": "tsc --project tsconfig.json",
     "build:watch": "yarn build --watch",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts .",
     "lint:fix": "yarn lint --fix",
