@@ -58,7 +58,7 @@
     "@types/tmp": "^0.2.1",
     "eslint": "^8.1.0",
     "jest": "^27.2.4",
-    "jest-extended": "^0.11.5",
+    "jest-extended": "^1.1.0",
     "nock": "^13.0.2",
     "node-notifier": "^10.0.0",
     "rimraf": "^3.0.0",
