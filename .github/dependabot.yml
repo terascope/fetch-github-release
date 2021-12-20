@@ -3,13 +3,14 @@ updates:
   - package-ecosystem: npm
     directory: '/'
     schedule:
-      interval: monthly
+      interval: weekly
       time: '04:00'
       timezone: US/Arizona
     open-pull-requests-limit: 3
     assignees:
-      - peterdemartini
+      - jsnoble
+      - godber
     ignore:
-      - dependency-name: '@babel/preset-env'
+      - dependency-name: '@types/node'
         versions:
-          - 7.13.8
+          - '>= 17.0.0'
