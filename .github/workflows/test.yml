@@ -1,0 +1,48 @@
+name: Fetch-Github-Release Tests
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  verify-build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18.19.1
+        cache: 'yarn'
+
+    - name: Install and build packages
+      run: yarn setup
+      env:
+        YARN_SETUP_ARGS: "--prod=false --silent"
+
+    - name: Lint codebase
+      run: yarn lint
+
+  run-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.19.1, 20.11.1, 22.1.0]
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Setup Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+
+      - name: Install and build packages
+        run: yarn setup
+        env:
+          YARN_SETUP_ARGS: "--prod=false --silent"
+
+      - name: Test
+        run: yarn --silent test
