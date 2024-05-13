@@ -3,10 +3,6 @@
 A node module to download Github release assets. It will also uncompress zip
 files and skip downloading if a file already exists.
 
-[![Build Status](https://travis-ci.org/terascope/fetch-github-release.svg?branch=master)](https://travis-ci.org/terascope/fetch-github-release)
-[![codecov](https://codecov.io/gh/terascope/fetch-github-release/branch/master/graph/badge.svg)](https://codecov.io/gh/terascope/fetch-github-release)
-[![Build Status](https://david-dm.org/terascope/fetch-github-release.svg)](https://david-dm.org/terascope/fetch-github-release)
-
 ```
 $ fetch-github-release -s darwin-x64 electron electron
 Downloading electron/electron@v1.3.1...
