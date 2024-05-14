@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.8.8",
+  "version": "0.8.9",
   "description": "Download a specific release from github",
   "files": [
     "dist/src/**/*",
@@ -44,7 +44,6 @@
   },
   "dependencies": {
     "extract-zip": "^2.0.1",
-    "gauge": "^4.0.0",
     "got": "^11.4.0",
     "multi-progress": "^4.0.0",
     "progress": "^2.0.3",
