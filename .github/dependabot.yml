@@ -10,6 +10,8 @@ updates:
     assignees:
       - jsnoble
       - godber
+      - busma13
+      - sotojn
     ignore:
       - dependency-name: '@types/node'
         versions:

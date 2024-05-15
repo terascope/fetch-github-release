@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.8.7",
+  "version": "0.8.9",
   "description": "Download a specific release from github",
   "files": [
     "dist/src/**/*",
@@ -44,7 +44,6 @@
   },
   "dependencies": {
     "extract-zip": "^2.0.1",
-    "gauge": "^4.0.0",
     "got": "^11.4.0",
     "multi-progress": "^4.0.0",
     "progress": "^2.0.3",
@@ -58,10 +57,10 @@
     "@types/tmp": "^0.2.1",
     "eslint": "^8.1.0",
     "jest": "^27.2.4",
-    "jest-extended": "^2.0.0",
+    "jest-extended": "^4.0.2",
     "nock": "^13.0.2",
     "node-notifier": "^10.0.0",
-    "rimraf": "^3.0.0",
+    "rimraf": "^5.0.7",
     "stream-buffers": "^3.0.0",
     "tmp": "0.2.1",
     "ts-jest": "^27.0.5",
