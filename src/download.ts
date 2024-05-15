@@ -45,7 +45,11 @@ export function download(
                         });
                         res2.on('progress', progress);
                         res2.on('error', reject);
-                        res2.on('end', resolve);
+                        res2.on('end', () => {
+                            w.on('close', () => {
+                                resolve();
+                            });
+                        });
                     })
                     .on('error', reject);
             })
