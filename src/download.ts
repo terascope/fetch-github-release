@@ -49,7 +49,7 @@ export function download(
                             w.on('close', () => {
                                 resolve();
                             });
-                        })
+                        });
                     })
                     .on('error', reject);
             })
