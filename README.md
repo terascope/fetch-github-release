@@ -3,7 +3,7 @@
 A node module to download Github release assets. It will also uncompress zip
 files and skip downloading if a file already exists.
 
-```
+```bash
 $ fetch-github-release -s darwin-x64 electron electron
 Downloading electron/electron@v1.3.1...
 electron-v1.3.1-darwi... ▇▇▇▇▇---------------------------------------------------- 662.8s
@@ -27,7 +27,7 @@ yarn global add @terascope/fetch-github-release
 
 ### Usage
 
-```
+```bash
 Usage: fetch-github-release [options] <user> <repo> [outputdir]
 
 Options:
