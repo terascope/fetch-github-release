@@ -9,7 +9,7 @@ function getRequestOptions(urlString: string) {
     const url = URL.parse(urlString);
     const headers: Record<string, string> = {
         Accept: 'application/octet-stream',
-        'User-Agent': '@terascope/fetch-github-release',
+        UserAgent: '@terascope/fetch-github-release',
     };
 
     if (GITHUB_TOKEN) {

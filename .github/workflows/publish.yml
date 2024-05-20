@@ -1,15 +1,11 @@
 name: Build and Publish
 
 on:
-  pull_request:
-    branches:
-      - master
-    types:
-      - closed
+  release:
+    types: [published]
 
 jobs:
   npm-publish:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     permissions:
       contents: write
