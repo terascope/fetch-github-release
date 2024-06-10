@@ -52,7 +52,7 @@
   "devDependencies": {
     "@terascope/eslint-config": "^0.8.0",
     "@types/jest": "^27.0.2",
-    "@types/node": "^16.10.2",
+    "@types/node": "^18.14.2",
     "@types/stream-buffers": "^3.0.4",
     "@types/tmp": "^0.2.1",
     "eslint": "^8.1.0",
