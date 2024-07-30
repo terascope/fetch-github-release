@@ -1,5 +1,5 @@
 import got, { OptionsOfJSONResponseBody } from 'got';
-import { GithubRelease } from './interfaces';
+import { GithubRelease } from './interfaces.js';
 
 const { GITHUB_TOKEN } = process.env;
 

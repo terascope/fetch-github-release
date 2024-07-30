@@ -1,6 +1,6 @@
 import yargs from 'yargs';
-import { downloadRelease } from './downloadRelease';
-import { GithubRelease, GithubReleaseAsset } from './interfaces';
+import { downloadRelease } from './downloadRelease.js';
+import { GithubRelease, GithubReleaseAsset } from './interfaces.js';
 
 const command = yargs
     .option('prerelease', {

@@ -1,6 +1,6 @@
 import nock from 'nock';
-import { getReleases } from '../src/getReleases';
-import { nockServer, releasesJson } from './utils/nockServer';
+import { getReleases } from '../src/getReleases.js';
+import { nockServer, releasesJson } from './utils/nockServer.js';
 
 describe('#getReleases()', () => {
     beforeEach(nockServer);

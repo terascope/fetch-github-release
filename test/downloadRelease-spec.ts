@@ -1,10 +1,10 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import nock from 'nock';
 import tmp from 'tmp';
-import { downloadRelease } from '../src/downloadRelease';
-import { nockServer, fileTxt, fileZip } from './utils/nockServer';
-import { GithubReleaseAsset } from '../src/interfaces';
+import { downloadRelease } from '../src/downloadRelease.js';
+import { nockServer, fileTxt, fileZip } from './utils/nockServer.js';
+import { GithubReleaseAsset } from '../src/interfaces.js';
 
 describe('#downloadRelease()', () => {
     let tmpobj: tmp.DirResult;

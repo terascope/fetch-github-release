@@ -1,6 +1,6 @@
 import 'jest-extended';
-import { getLatest } from '../src/getLatest';
-import { releasesJson } from './utils/nockServer';
+import { getLatest } from '../src/getLatest.js';
+import { releasesJson } from './utils/nockServer.js';
 
 describe('#getLatest()', () => {
     it('gets the latest release', () => {

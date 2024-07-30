@@ -1,7 +1,7 @@
-import http from 'http';
-import https from 'https';
-import { Writable } from 'stream';
-import URL from 'url';
+import http from 'node:http';
+import https from 'node:https';
+import { Writable } from 'node:stream';
+import URL from 'node:url';
 
 const { GITHUB_TOKEN } = process.env;
 
