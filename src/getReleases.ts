@@ -20,3 +20,5 @@ export async function getReleases(user: string, repo: string): Promise<GithubRel
     const r = await got.get<GithubRelease[]>(url, requestConfig);
     return r.body;
 }
+
+export { HTTPError } from 'got';
