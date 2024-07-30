@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import nock from 'nock';
 import streamBuffers from 'stream-buffers';
 import { download } from '../src/download.js';
