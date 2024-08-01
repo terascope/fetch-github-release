@@ -8,7 +8,7 @@ export async function getReleases(user: string, repo: string): Promise<GithubRel
 
     const requestConfig: OptionsOfJSONResponseBody = {
         headers: {
-            UserAgent: '@terascope/fetch-github-release'
+            'User-Agent': '@terascope/fetch-github-release'
         } as Record<string, string>,
         responseType: 'json'
     };
