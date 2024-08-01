@@ -1,4 +1,4 @@
-import { rpad } from '../src/rpad';
+import { rpad } from '../src/rpad.js';
 
 describe('#rpad()', () => {
     it('adds right padding to a string', () => {

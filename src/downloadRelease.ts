@@ -1,18 +1,17 @@
-import os from 'os';
-import fs from 'fs';
-import path from 'path';
+import os from 'node:os';
+import fs from 'node:fs';
+import path from 'node:path';
 import extract from 'extract-zip';
-import { getReleases } from './getReleases';
-import { getLatest } from './getLatest';
-import { download } from './download';
-import { rpad } from './rpad';
+import MultiProgress from 'multi-progress';
+import { getReleases } from './getReleases.js';
+import { getLatest } from './getLatest.js';
+import { download } from './download.js';
+import { rpad } from './rpad.js';
 import { GithubRelease, GithubReleaseAsset } from './interfaces';
 
 function pass() {
     return true;
 }
-
-const MultiProgress = require('multi-progress');
 
 /**
  * Download a specific github release

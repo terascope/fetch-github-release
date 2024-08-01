@@ -1,6 +1,4 @@
-'use strict';
-
-module.exports = {
+export default {
     verbose: true,
     testEnvironment: 'node',
     setupFilesAfterEnv: ['jest-extended/all'],
@@ -18,13 +16,19 @@ module.exports = {
         '<rootDir>/test/**/*-spec.{ts,js}',
         '<rootDir>/test/*-spec.{ts,js}',
     ],
+    moduleNameMapper: {
+        '^(\\.{1,2}/.*)\\.js$': '$1'
+    },
     preset: 'ts-jest',
+    extensionsToTreatAsEsm: ['.ts'],
     globals: {
         'ts-jest': {
             tsconfig: './tsconfig.json',
             diagnostics: true,
+            useESM: true
         },
         ignoreDirectories: ['dist'],
-        availableExtensions: ['.js', '.ts']
-    }
+        availableExtensions: ['.js', '.ts', '.mjs']
+    },
+    testTimeout: 60 * 1000
 };

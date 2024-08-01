@@ -3,8 +3,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.8.11",
+  "version": "1.0.0",
   "description": "Download a specific release from github",
+  "type": "module",
   "files": [
     "dist/src/**/*",
     "bin/*"
@@ -17,10 +18,10 @@
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts .",
     "lint:fix": "yarn lint --fix",
     "setup": "yarn && yarn build",
-    "test": "jest",
-    "test:cov": "jest --collectCoverage",
-    "test:watch": "jest --coverage=false --notify --watch --onlyChanged",
-    "test:debug": "env DEBUG=\"${DEBUG:-*teraslice*}\" jest --detectOpenHandles --coverage=false --runInBand",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
+    "test:cov": "NODE_OPTIONS='--experimental-vm-modules' jest --collectCoverage",
+    "test:watch": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage=false --notify --watch --onlyChanged",
+    "test:debug": "NODE_OPTIONS='--experimental-vm-modules' env DEBUG=\"${DEBUG:-*teraslice*}\" jest --detectOpenHandles --coverage=false --runInBand",
     "check": "yarn run lint && yarn run test",
     "clean": "rimraf dist coverage",
     "prepublishOnly": "yarn run clean && yarn run build"
@@ -51,19 +52,20 @@
   },
   "devDependencies": {
     "@terascope/eslint-config": "^0.8.0",
-    "@types/jest": "^27.0.2",
-    "@types/node": "^18.14.2",
+    "@types/jest": "^29.5.12",
+    "@types/multi-progress": "^2.0.6",
+    "@types/node": "^22.0.2",
     "@types/stream-buffers": "^3.0.4",
     "@types/tmp": "^0.2.1",
     "eslint": "^8.1.0",
-    "jest": "^27.2.4",
+    "jest": "^29.7.0",
     "jest-extended": "^4.0.2",
     "nock": "^13.0.2",
     "node-notifier": "^10.0.0",
     "rimraf": "^5.0.7",
     "stream-buffers": "^3.0.0",
     "tmp": "0.2.3",
-    "ts-jest": "^27.0.5",
+    "ts-jest": "^29.2.4",
     "typescript": "^4.4.3"
   }
 }

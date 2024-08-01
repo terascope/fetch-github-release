@@ -1,12 +1,14 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import nock from 'nock';
+import { fileURLToPath } from 'node:url';
 
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 export const releasesJson = JSON.parse(
-    fs.readFileSync(path.resolve(__dirname, '../fixtures/releases.json'), 'utf8')
+    fs.readFileSync(path.resolve(dirname, '../fixtures/releases.json'), 'utf8')
 );
-export const fileTxt = fs.readFileSync(path.resolve(__dirname, '../fixtures/file.txt'), 'utf8');
-export const fileZip = fs.readFileSync(path.resolve(__dirname, '../fixtures/file.zip'));
+export const fileTxt = fs.readFileSync(path.resolve(dirname, '../fixtures/file.txt'), 'utf8');
+export const fileZip = fs.readFileSync(path.resolve(dirname, '../fixtures/file.zip'));
 
 export function nockServer(): void {
     nock('https://api.github.com')

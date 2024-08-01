@@ -1,8 +1,8 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import tmp from 'tmp';
 import extract from 'extract-zip';
-import { fileZip, fileTxt } from './utils/nockServer';
+import { fileZip, fileTxt } from './utils/nockServer.js';
 
 describe('#extract()', () => {
     let tmpobj: tmp.DirResult;

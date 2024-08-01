@@ -1,7 +1,8 @@
+import { jest } from '@jest/globals';
 import nock from 'nock';
 import streamBuffers from 'stream-buffers';
-import { download } from '../src/download';
-import { nockServer, fileTxt } from './utils/nockServer';
+import { download } from '../src/download.js';
+import { nockServer, fileTxt } from './utils/nockServer.js';
 
 describe('#download()', () => {
     beforeEach(nockServer);

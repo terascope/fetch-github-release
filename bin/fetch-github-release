@@ -1,5 +1,7 @@
 #!/usr/bin/env node
+import path from 'node:path';
+import fs from 'node:fs';
+import { fileURLToPath } from "node:url";
 
-var path = require('path');
-var fs = require('fs');
-require(path.join(path.dirname(fs.realpathSync(__filename)), '../dist/src/cli'));
+const filename = fileURLToPath(import.meta.url);
+import(path.join(path.dirname(fs.realpathSync(filename)), '../dist/src/cli.js'));

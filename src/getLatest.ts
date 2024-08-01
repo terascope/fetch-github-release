@@ -1,4 +1,4 @@
-import { GithubRelease, GithubReleaseAsset } from './interfaces';
+import { GithubRelease, GithubReleaseAsset } from './interfaces.js';
 
 function pass() {
     return true;
