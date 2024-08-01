@@ -1,8 +1,11 @@
 import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 import { downloadRelease } from './downloadRelease.js';
 import { GithubRelease, GithubReleaseAsset } from './interfaces.js';
 
-const command = yargs
+const command = await yargs(hideBin(process.argv))
+    .alias('h', 'help')
+    .alias('v', 'version')
     .option('prerelease', {
         description: 'download prerelease',
         type: 'boolean',
