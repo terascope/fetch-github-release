@@ -16,7 +16,8 @@
         "noImplicitReturns": true,
         "preserveConstEnums": true,
         "esModuleInterop": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "types": ["jest", "jest-extended"]
     },
     "include": [
         "src/**/*",
