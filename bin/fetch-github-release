@@ -3,5 +3,5 @@ import path from 'node:path';
 import fs from 'node:fs';
 import { fileURLToPath } from "node:url";
 
-const __filename = fileURLToPath(import.meta.url);
-import(path.join(path.dirname(fs.realpathSync(__filename)), '../dist/src/cli.js'));
+const filename = fileURLToPath(import.meta.url);
+import(path.join(path.dirname(fs.realpathSync(filename)), '../dist/src/cli.js'));
