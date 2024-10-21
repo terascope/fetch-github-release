@@ -15,7 +15,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "build:watch": "yarn build --watch",
-    "lint": "eslint --ignore-path .gitignore --ext .js,.ts .",
+    "lint": "eslint --ignore-pattern .gitignore",
     "lint:fix": "yarn lint --fix",
     "setup": "yarn && yarn build",
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
