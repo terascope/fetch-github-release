@@ -62,7 +62,7 @@ yarn add @terascope/fetch-github-release
 ### Usage
 
 ```javascript
-const { downloadRelease } = require('@terascope/fetch-github-release');
+import { downloadRelease }  from '@terascope/fetch-github-release';
 
 const user = 'some user';
 const repo = 'some repo';

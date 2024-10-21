@@ -12,7 +12,3 @@ updates:
       - godber
       - busma13
       - sotojn
-    ignore:
-      - dependency-name: '@types/node'
-        versions:
-          - '>= 17.0.0'

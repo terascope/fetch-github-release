@@ -7,7 +7,9 @@ import { fileZip, fileTxt } from './utils/nockServer.js';
 describe('#extract()', () => {
     let tmpobj: tmp.DirResult;
 
-    beforeEach(() => { tmpobj = tmp.dirSync({ unsafeCleanup: true }); });
+    beforeEach(() => {
+        tmpobj = tmp.dirSync({ unsafeCleanup: true });
+    });
     afterEach(() => tmpobj.removeCallback());
 
     it('extracts a zip file', async () => {
