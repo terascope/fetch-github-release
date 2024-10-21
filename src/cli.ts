@@ -69,9 +69,11 @@ downloadRelease(
     filterAsset,
     !!command.zipped,
     !!command.quiet
-).catch((err) => {
-    console.error(err);
-    process.exitCode = 1;
-}).finally(() => {
-    process.exit();
-});
+)
+    .catch((err) => {
+        console.error(err);
+        process.exitCode = 1;
+    })
+    .finally(() => {
+        process.exit();
+    });

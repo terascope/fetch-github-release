@@ -8,7 +8,7 @@ export function getLatest(
     releases: GithubRelease[],
     filterRelease: (release: GithubRelease) => boolean = pass,
     filterAsset: (release: GithubReleaseAsset) => boolean = pass
-): GithubRelease|null {
+): GithubRelease | null {
     if (!releases) {
         return null;
     }
