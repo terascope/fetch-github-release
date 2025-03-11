@@ -13,7 +13,7 @@ const command = await yargs(hideBin(process.argv))
         default: false
     })
     .option('output', {
-        description: 'type of output returned',
+        description: 'return dry-run information in either text or json format',
         type: 'string',
         alias: 'o',
         default: 'text',

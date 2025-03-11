@@ -7,7 +7,9 @@ import { getReleases } from './getReleases.js';
 import { getLatest } from './getLatest.js';
 import { download } from './download.js';
 import { rpad } from './rpad.js';
-import { GithubRelease, GithubReleaseAsset } from './interfaces';
+import {
+    GithubRelease, GithubReleaseAsset, ReleaseInfo
+} from './interfaces';
 
 function pass() {
     return true;
@@ -22,6 +24,8 @@ function pass() {
  * @param filterAsset Optionally filter the asset for a given release
  * @param leaveZipped Optionally leave the file zipped
  * @param leaveZipped Optionally disable logging for quiet output
+ * @param dryRun Only return information on what would have been downloaded
+ * @param output Returns dry-run information in either plaintext or json format
 */
 export async function downloadRelease(
     user: string,
@@ -31,7 +35,9 @@ export async function downloadRelease(
     filterAsset: (release: GithubReleaseAsset) => boolean = pass,
     leaveZipped = false,
     disableLogging = false,
-): Promise<string[]> {
+    dryRun = false,
+    output = 'text'
+): Promise<string[] | ReleaseInfo> {
     if (!user) {
         throw new Error('Missing user argument');
     }
@@ -48,12 +54,16 @@ export async function downloadRelease(
         );
     }
 
-    if (!disableLogging) {
+    if (!disableLogging && !dryRun) {
         console.error(`Downloading ${user}/${repo}@${release.tag_name}...`);
     }
 
     const promises = release.assets.map(async (asset): Promise<string> => {
         let progress;
+
+        if (dryRun) {
+            return asset.name;
+        }
 
         if (process.stdout.isTTY && !disableLogging) {
             const bar = bars.newBar(`${rpad(asset.name, 24)} :bar :etas`, {
@@ -89,5 +99,47 @@ export async function downloadRelease(
         }
         return destf;
     });
+
+    if (dryRun) {
+        // In case of dryrun, send an organized object
+        const dryRunInfo: ReleaseInfo = {
+            release: `${user}/${repo}@${release.tag_name}`,
+            assetFileNames: await Promise.all(promises)
+        }
+
+        /// Give only the release string in the case
+        // that quiet is enabled
+        if (disableLogging && output === 'text') {
+            process.stdout.write(`${dryRunInfo.release}\n`);
+
+        } else if (disableLogging && output === 'json') {
+            process.stdout.write(`${JSON.stringify(dryRunInfo.release, null, 2)}\n`);
+
+        } else {
+            printDryRunInfo(dryRunInfo, output);
+        }
+
+        return Promise.resolve(dryRunInfo);
+    }
+
     return Promise.all(promises);
+}
+
+/**
+ * Prints dry-run info in plaintext or JSON format.
+ *
+ * @param {ReleaseInfo} data The release information to display.
+ * @param {string} output The output format, either 'text' or 'json'.
+ */
+function printDryRunInfo(data: ReleaseInfo, output: string): void {
+    if (output === 'text') {
+        const prompt = [
+            `Release: ${data.release}\n`,
+            'The following files would have been downloaded:\n',
+            ...data.assetFileNames.map(file => `- ${file}`),
+        ].join('\n');
+        process.stdout.write(`${prompt}\n`);
+    } else if (output === 'json') {
+        process.stdout.write(`${JSON.stringify(data, null, 2)}\n`);
+    }
 }
