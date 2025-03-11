@@ -26,3 +26,10 @@ export interface GithubReleaseAsset {
     created_at: string;
     updated_at: string;
 }
+/**
+ * JSON object for printing dry-run
+ */
+export interface ReleaseInfo {
+    release: string,
+    assetFileNames: string[]
+}
