@@ -30,6 +30,6 @@ export interface GithubReleaseAsset {
  * JSON object for printing dry-run
  */
 export interface ReleaseInfo {
-    release: string,
-    assetFileNames: string[]
+    release: string;
+    assetFileNames: string[];
 }

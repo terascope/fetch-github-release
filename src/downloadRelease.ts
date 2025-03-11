@@ -105,16 +105,14 @@ export async function downloadRelease(
         const dryRunInfo: ReleaseInfo = {
             release: `${user}/${repo}@${release.tag_name}`,
             assetFileNames: await Promise.all(promises)
-        }
+        };
 
         /// Give only the release string in the case
         // that quiet is enabled
         if (disableLogging && output === 'text') {
             process.stdout.write(`${dryRunInfo.release}\n`);
-
         } else if (disableLogging && output === 'json') {
             process.stdout.write(`${JSON.stringify(dryRunInfo.release, null, 2)}\n`);
-
         } else {
             printDryRunInfo(dryRunInfo, output);
         }
@@ -136,7 +134,7 @@ function printDryRunInfo(data: ReleaseInfo, output: string): void {
         const prompt = [
             `Release: ${data.release}\n`,
             'The following files would have been downloaded:\n',
-            ...data.assetFileNames.map(file => `- ${file}`),
+            ...data.assetFileNames.map((file) => `- ${file}`),
         ].join('\n');
         process.stdout.write(`${prompt}\n`);
     } else if (output === 'json') {

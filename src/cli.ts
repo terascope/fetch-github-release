@@ -1,7 +1,7 @@
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { downloadRelease } from './downloadRelease.js';
-import { GithubRelease, GithubReleaseAsset, ReleaseInfo } from './interfaces.js';
+import { GithubRelease, GithubReleaseAsset } from './interfaces.js';
 
 const command = await yargs(hideBin(process.argv))
     .alias('h', 'help')
