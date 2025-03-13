@@ -6,6 +6,19 @@ import { GithubRelease, GithubReleaseAsset } from './interfaces.js';
 const command = await yargs(hideBin(process.argv))
     .alias('h', 'help')
     .alias('v', 'version')
+    .option('dry-run', {
+        description: 'list metadata instead of downloading',
+        type: 'boolean',
+        alias: 'd',
+        default: false
+    })
+    .option('output', {
+        description: 'return dry-run information in either text or json format',
+        type: 'string',
+        alias: 'o',
+        default: 'text',
+        choices: ['json', 'text']
+    })
     .option('prerelease', {
         description: 'download prerelease',
         type: 'boolean',
@@ -18,7 +31,7 @@ const command = await yargs(hideBin(process.argv))
         type: 'string',
     })
     .option('quiet', {
-        description: 'don\'t log to console',
+        description: 'don\'t log to console, if dry-run is enabled, will only list release',
         type: 'boolean',
         alias: 'q',
         default: false
@@ -68,7 +81,9 @@ downloadRelease(
     filterRelease,
     filterAsset,
     !!command.zipped,
-    !!command.quiet
+    !!command.quiet,
+    !!command.dryRun,
+    command.output
 )
     .catch((err) => {
         console.error(err);
