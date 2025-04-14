@@ -54,7 +54,7 @@
     "@terascope/eslint-config": "^1.1.11",
     "@types/jest": "^29.5.12",
     "@types/multi-progress": "^2.0.6",
-    "@types/node": "^22.14.0",
+    "@types/node": "^22.14.1",
     "@types/stream-buffers": "^3.0.4",
     "@types/tmp": "^0.2.1",
     "eslint": "^9.24.0",
@@ -65,8 +65,8 @@
     "rimraf": "^5.0.7",
     "stream-buffers": "^3.0.0",
     "tmp": "0.2.3",
-    "ts-jest": "^29.3.1",
-    "typescript": "^5.8.2"
+    "ts-jest": "^29.3.2",
+    "typescript": "^5.8.3"
   },
   "engines": {
     "node": ">=18.0.0"
