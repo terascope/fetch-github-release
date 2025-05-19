@@ -5,3 +5,6 @@ lib
 dist
 tmp
 coverage
+
+# .yarn
+.yarn/install-state.gz
