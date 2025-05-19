@@ -19,7 +19,7 @@ jobs:
     - name: Install and build packages
       run: yarn setup
       env:
-        YARN_SETUP_ARGS: "--prod=false --silent"
+        YARN_LOG_LEVEL: "error"
 
     - name: Lint codebase
       run: yarn lint
