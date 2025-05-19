@@ -20,6 +20,6 @@ jobs:
       - name: Retrieve version
         run : echo "NEW_VERSION=$(jq -r '.version' package.json)" >> $GITHUB_OUTPUT
         id: version
-      - run: yarn publish --new-version ${{ steps.version.outputs.NEW_VERSION }} --access public --non-interactive
+      - run: yarn npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
