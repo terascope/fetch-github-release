@@ -17,9 +17,7 @@ jobs:
         cache: 'yarn'
 
     - name: Install and build packages
-      run: yarn setup
-      env:
-        YARN_LOG_LEVEL: "error"
+      run: yarn && yarn setup
 
     - name: Lint codebase
       run: yarn lint
