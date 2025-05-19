@@ -16,7 +16,7 @@ jobs:
           # NOTE: Hard Coded Node Version
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: yarn setup
+      - run: yarn && yarn setup
       - name: Retrieve version
         run : echo "NEW_VERSION=$(jq -r '.version' package.json)" >> $GITHUB_OUTPUT
         id: version
