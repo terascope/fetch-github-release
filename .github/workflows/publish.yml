@@ -20,6 +20,9 @@ jobs:
       - name: Retrieve version
         run : echo "NEW_VERSION=$(jq -r '.version' package.json)" >> $GITHUB_OUTPUT
         id: version
+      - run:
+          echo "Check NPM Authentication"
+          yarn npm whoami
       - run: yarn npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
