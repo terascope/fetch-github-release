@@ -49,10 +49,10 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@terascope/eslint-config": "^1.1.14",
+    "@terascope/eslint-config": "^1.1.15",
     "@types/jest": "^29.5.14",
     "@types/multi-progress": "^2.0.6",
-    "@types/node": "^22.15.19",
+    "@types/node": "^22.15.21",
     "@types/stream-buffers": "^3.0.7",
     "@types/tmp": "^0.2.6",
     "eslint": "^9.27.0",
