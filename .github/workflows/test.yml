@@ -26,7 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [22.x, 24.x]
+        # Node 24 pinned. See issue #399
+        node-version: [22.x, 24.5]
     steps:
       - name: Check out code
         uses: actions/checkout@v4
