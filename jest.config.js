@@ -22,13 +22,18 @@ export default {
     preset: 'ts-jest',
     extensionsToTreatAsEsm: ['.ts'],
     globals: {
-        'ts-jest': {
-            tsconfig: './tsconfig.json',
-            diagnostics: true,
-            useESM: true
-        },
         ignoreDirectories: ['dist'],
         availableExtensions: ['.js', '.ts', '.mjs']
+    },
+    transform: {
+        '\\.[jt]sx?$': ['ts-jest',
+            {
+                tsconfig: './tsconfig.json',
+                diagnostics: true,
+                pretty: true,
+                useESM: true
+            }
+        ]
     },
     testTimeout: 60 * 1000
 };
