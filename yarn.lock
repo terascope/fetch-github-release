@@ -1298,6 +1298,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@keyv/serialize@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@keyv/serialize@npm:1.1.1"
+  checksum: 10c0/b0008cae4a54400c3abf587b8cc2474c6f528ee58969ce6cf9cb07a04006f80c73c85971d6be6544408318a2bc40108236a19a82aea0a6de95aae49533317374
+  languageName: node
+  linkType: hard
+
 "@mswjs/interceptors@npm:^0.39.5":
   version: 0.39.5
   resolution: "@mswjs/interceptors@npm:0.39.5"
@@ -1519,12 +1526,12 @@ __metadata:
     "@terascope/eslint-config": "npm:^1.1.26"
     "@types/jest": "npm:^30.0.0"
     "@types/multi-progress": "npm:^2.0.6"
-    "@types/node": "npm:^24.7.0"
+    "@types/node": "npm:^24.7.2"
     "@types/stream-buffers": "npm:^3.0.7"
     "@types/tmp": "npm:^0.2.6"
     eslint: "npm:^9.37.0"
     extract-zip: "npm:^2.0.1"
-    got: "npm:14.4.9"
+    got: "npm:14.5.0"
     jest: "npm:^30.2.0"
     jest-extended: "npm:^6.0.0"
     multi-progress: "npm:^4.0.0"
@@ -1534,7 +1541,7 @@ __metadata:
     rimraf: "npm:^6.0.1"
     stream-buffers: "npm:^3.0.3"
     tmp: "npm:0.2.5"
-    ts-jest: "npm:^29.4.4"
+    ts-jest: "npm:^29.4.5"
     typescript: "npm:^5.9.3"
     yargs: "npm:^18.0.0"
   bin:
@@ -1681,12 +1688,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^24.7.0":
-  version: 24.7.0
-  resolution: "@types/node@npm:24.7.0"
+"@types/node@npm:^24.7.2":
+  version: 24.7.2
+  resolution: "@types/node@npm:24.7.2"
   dependencies:
     undici-types: "npm:~7.14.0"
-  checksum: 10c0/f036c78062cb3a0d5c6586bf2dac347ed3f4af121cef4ab92c85c44e32be1c50aab5ba96955842b7f8165f0e0f1c8066d1813ae259372df6c0fa9fadb1116a3e
+  checksum: 10c0/03f662f10e4b89bc97016e067101cbabe55025b54c24afb581fb50992d5eeaaf417bdae34bbc668ae8759d3cdbbbadf35fc8b9b29d26f52ede2525d48e919e49
   languageName: node
   linkType: hard
 
@@ -2667,18 +2674,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cacheable-request@npm:^12.0.1":
-  version: 12.0.1
-  resolution: "cacheable-request@npm:12.0.1"
+"cacheable-request@npm:^13.0.12":
+  version: 13.0.12
+  resolution: "cacheable-request@npm:13.0.12"
   dependencies:
     "@types/http-cache-semantics": "npm:^4.0.4"
     get-stream: "npm:^9.0.1"
-    http-cache-semantics: "npm:^4.1.1"
-    keyv: "npm:^4.5.4"
+    http-cache-semantics: "npm:^4.2.0"
+    keyv: "npm:^5.5.3"
     mimic-response: "npm:^4.0.0"
-    normalize-url: "npm:^8.0.1"
+    normalize-url: "npm:^8.1.0"
     responselike: "npm:^3.0.0"
-  checksum: 10c0/3ccc26519c8dd0821fcb21fa00781e55f05ab6e1da1487fbbee9c8c03435a3cf72c29a710a991cebe398fb9a5274e2a772fc488546d402db8dc21310764ed83a
+  checksum: 10c0/ef3b7d7f109767549958ae876532cdd4bc62acc4c6f5cf2cf8c0762fe46d8481c5a253dc9af1d5ad31cb2414386356689f288b46a400d857307ceb1c3ae4157f
   languageName: node
   linkType: hard
 
@@ -4228,22 +4235,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"got@npm:14.4.9":
-  version: 14.4.9
-  resolution: "got@npm:14.4.9"
+"got@npm:14.5.0":
+  version: 14.5.0
+  resolution: "got@npm:14.5.0"
   dependencies:
     "@sindresorhus/is": "npm:^7.0.1"
     "@szmarczak/http-timer": "npm:^5.0.1"
     cacheable-lookup: "npm:^7.0.0"
-    cacheable-request: "npm:^12.0.1"
+    cacheable-request: "npm:^13.0.12"
     decompress-response: "npm:^6.0.0"
     form-data-encoder: "npm:^4.0.2"
     http2-wrapper: "npm:^2.2.1"
+    keyv: "npm:^5.5.3"
     lowercase-keys: "npm:^3.0.0"
     p-cancelable: "npm:^4.0.1"
-    responselike: "npm:^3.0.0"
+    responselike: "npm:^4.0.2"
     type-fest: "npm:^4.26.1"
-  checksum: 10c0/bc4b0991c114947b54681d96d2ee998638bb824a6ccb2e95ab09660aaf0f514bac383a81755fe7b6b89e3a23fa1bf05c1e5ae9be102f50b37d654f29c967c8d8
+  checksum: 10c0/cc1e7db3f70dab1b23c7d50e7a581753cfecef01810d4ca33bc64de0f18cc60853515c96b2749c2979fdf46ef1a2a44e9e8ce043a20e3882ce3ae0b175b71ca9
   languageName: node
   linkType: hard
 
@@ -4361,6 +4369,13 @@ __metadata:
   version: 4.1.1
   resolution: "http-cache-semantics@npm:4.1.1"
   checksum: 10c0/ce1319b8a382eb3cbb4a37c19f6bfe14e5bb5be3d09079e885e8c513ab2d3cd9214902f8a31c9dc4e37022633ceabfc2d697405deeaf1b8f3552bb4ed996fdfc
+  languageName: node
+  linkType: hard
+
+"http-cache-semantics@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "http-cache-semantics@npm:4.2.0"
+  checksum: 10c0/45b66a945cf13ec2d1f29432277201313babf4a01d9e52f44b31ca923434083afeca03f18417f599c9ab3d0e7b618ceb21257542338b57c54b710463b4a53e37
   languageName: node
   linkType: hard
 
@@ -5577,6 +5592,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"keyv@npm:^5.5.3":
+  version: 5.5.3
+  resolution: "keyv@npm:5.5.3"
+  dependencies:
+    "@keyv/serialize": "npm:^1.1.1"
+  checksum: 10c0/6890ed8a76e6b16034ceda89a4a7dc9cd1ebd05bf0ee1f7f3d3fe37ac3e4a6196d710ab2fef3d47cf8c394b61104b3bfcab17f23cc6e0dc2dcbe36483a43f84d
+  languageName: node
+  linkType: hard
+
 "language-subtag-registry@npm:^0.3.20":
   version: 0.3.23
   resolution: "language-subtag-registry@npm:0.3.23"
@@ -6049,10 +6073,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"normalize-url@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "normalize-url@npm:8.0.1"
-  checksum: 10c0/eb439231c4b84430f187530e6fdac605c5048ef4ec556447a10c00a91fc69b52d8d8298d9d608e68d3e0f7dc2d812d3455edf425e0f215993667c3183bcab1ef
+"normalize-url@npm:^8.1.0":
+  version: 8.1.0
+  resolution: "normalize-url@npm:8.1.0"
+  checksum: 10c0/e9b68db5f0264ce74fc083e2120b4a40fb3248e5dceec5f795bddcee0311b3613f858c9a65f258614fac2776b8e9957023bea8fe7299db1496b3cd1c75976cfe
   languageName: node
   linkType: hard
 
@@ -6685,6 +6709,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"responselike@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "responselike@npm:4.0.2"
+  dependencies:
+    lowercase-keys: "npm:^3.0.0"
+  checksum: 10c0/8366407fc7f12466dd52682483a31dd6ca892481365caadea9a380196d8a6238650e064531087bebd25d7e9393f491efc2dad723fadc54db7a2b442dba8ef588
+  languageName: node
+  linkType: hard
+
 "retry@npm:^0.12.0":
   version: 0.12.0
   resolution: "retry@npm:0.12.0"
@@ -6794,6 +6827,15 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 10c0/aca305edfbf2383c22571cb7714f48cadc7ac95371b4b52362fb8eeffdfbc0de0669368b82b2b15978f8848f01d7114da65697e56cd8c37b0dab8c58e543f9ea
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.7.3":
+  version: 7.7.3
+  resolution: "semver@npm:7.7.3"
+  bin:
+    semver: bin/semver.js
+  checksum: 10c0/4afe5c986567db82f44c8c6faef8fe9df2a9b1d98098fc1721f57c696c4c21cebd572f297fc21002f81889492345b8470473bc6f4aff5fb032a6ea59ea2bc45e
   languageName: node
   linkType: hard
 
@@ -7322,9 +7364,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:^29.4.4":
-  version: 29.4.4
-  resolution: "ts-jest@npm:29.4.4"
+"ts-jest@npm:^29.4.5":
+  version: 29.4.5
+  resolution: "ts-jest@npm:29.4.5"
   dependencies:
     bs-logger: "npm:^0.2.6"
     fast-json-stable-stringify: "npm:^2.1.0"
@@ -7332,7 +7374,7 @@ __metadata:
     json5: "npm:^2.2.3"
     lodash.memoize: "npm:^4.1.2"
     make-error: "npm:^1.3.6"
-    semver: "npm:^7.7.2"
+    semver: "npm:^7.7.3"
     type-fest: "npm:^4.41.0"
     yargs-parser: "npm:^21.1.1"
   peerDependencies:
@@ -7358,7 +7400,7 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: 10c0/f99d612704cda98369f4a54d3db771bad5edd1390fded4f1691f3182f0c8ce8b7f827e5846952bd8bcd26df26c9fb18f11089de760956bdf357875a5f1d49fcc
+  checksum: 10c0/789f00666ba785ac425606d42601cbdc03015e46f228a0b333f06c6658d80865819bae0ddd59c762285352d2b14d0aa50912574ec699ba6369ddb0d400a49ac0
   languageName: node
   linkType: hard
 
