@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "extract-zip": "^2.0.1",
-    "got": "14.4.9",
+    "got": "14.5.0",
     "multi-progress": "^4.0.0",
     "progress": "^2.0.3",
     "yargs": "^18.0.0"
@@ -52,7 +52,7 @@
     "@terascope/eslint-config": "^1.1.26",
     "@types/jest": "^30.0.0",
     "@types/multi-progress": "^2.0.6",
-    "@types/node": "^24.7.0",
+    "@types/node": "^24.7.2",
     "@types/stream-buffers": "^3.0.7",
     "@types/tmp": "^0.2.6",
     "eslint": "^9.37.0",
@@ -63,7 +63,7 @@
     "rimraf": "^6.0.1",
     "stream-buffers": "^3.0.3",
     "tmp": "0.2.5",
-    "ts-jest": "^29.4.4",
+    "ts-jest": "^29.4.5",
     "typescript": "^5.9.3"
   },
   "engines": {
