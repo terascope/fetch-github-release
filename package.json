@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "extract-zip": "^2.0.1",
-    "got": "14.6.0",
+    "got": "14.6.1",
     "multi-progress": "^4.0.0",
     "progress": "^2.0.3",
     "yargs": "^18.0.0"
@@ -52,8 +52,8 @@
     "@terascope/eslint-config": "^1.1.26",
     "@types/jest": "^30.0.0",
     "@types/multi-progress": "^2.0.6",
-    "@types/node": "^24.8.1",
-    "@types/stream-buffers": "^3.0.7",
+    "@types/node": "^24.9.1",
+    "@types/stream-buffers": "^3.0.8",
     "@types/tmp": "^0.2.6",
     "eslint": "^9.38.0",
     "jest": "^30.2.0",
