@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "extract-zip": "^2.0.1",
-    "got": "14.6.4",
+    "got": "14.6.5",
     "multi-progress": "^4.0.0",
     "progress": "^2.0.3",
     "yargs": "^18.0.0"
@@ -60,7 +60,7 @@
     "jest-extended": "^7.0.0",
     "nock": "^14.0.10",
     "node-notifier": "^10.0.1",
-    "rimraf": "^6.1.0",
+    "rimraf": "^6.1.2",
     "stream-buffers": "^3.0.3",
     "tmp": "0.2.5",
     "ts-jest": "^29.4.5",
