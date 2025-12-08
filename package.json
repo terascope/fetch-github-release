@@ -63,7 +63,7 @@
     "rimraf": "^6.1.2",
     "stream-buffers": "^3.0.3",
     "tmp": "0.2.5",
-    "ts-jest": "^29.4.5",
+    "ts-jest": "^29.4.6",
     "typescript": "^5.9.3"
   },
   "engines": {
