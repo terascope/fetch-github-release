@@ -8,38 +8,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check out code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
 
     - name: Setup Node
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
         node-version: 22.x
-        cache: 'yarn'
+        cache: 'pnpm'
 
     - name: Install and build packages
-      run: yarn && yarn setup
+      run: pnpm install --frozen-lockfile && pnpm run setup
 
     - name: Lint codebase
-      run: yarn lint
+      run: pnpm run lint
 
   run-tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # Node 24 pinned. See issue #399
-        node-version: [22.x, 24.4]
+        node-version: [22.x, 24.x]
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Setup Node ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: 'pnpm'
 
       - name: Install and build packages
-        run: yarn && yarn setup
+        run: pnpm install --frozen-lockfile && pnpm run setup
 
       - name: Test
-        run: yarn test
+        run: pnpm test

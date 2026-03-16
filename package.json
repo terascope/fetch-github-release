@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "Download a specific release from github",
   "type": "module",
   "files": [
@@ -14,17 +14,17 @@
   "typings": "dist/src/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.json",
-    "build:watch": "yarn build --watch",
+    "build:watch": "tsc --project tsconfig.json --watch",
     "lint": "eslint --ignore-pattern .gitignore",
-    "lint:fix": "yarn lint --fix",
-    "setup": "yarn && yarn build",
+    "lint:fix": "pnpm lint --fix",
+    "setup": "pnpm install && pnpm build",
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
     "test:cov": "NODE_OPTIONS='--experimental-vm-modules' jest --collectCoverage",
     "test:watch": "NODE_OPTIONS='--experimental-vm-modules' jest --coverage=false --notify --watch --onlyChanged",
     "test:debug": "NODE_OPTIONS='--experimental-vm-modules' env DEBUG=\"${DEBUG:-*teraslice*}\" jest --detectOpenHandles --coverage=false --runInBand",
-    "check": "yarn run lint && yarn run test",
+    "check": "pnpm run lint && pnpm run test",
     "clean": "rimraf dist coverage",
-    "prepublishOnly": "yarn run clean && yarn run build"
+    "prepublishOnly": "pnpm run clean && pnpm run build"
   },
   "bin": "bin/fetch-github-release",
   "repository": {
@@ -49,12 +49,14 @@
     "yargs": "^18.0.0"
   },
   "devDependencies": {
+    "@jest/globals": "^30.3.0",
     "@terascope/eslint-config": "^1.1.30",
     "@types/jest": "^30.0.0",
     "@types/multi-progress": "^2.0.6",
     "@types/node": "^24.12.0",
     "@types/stream-buffers": "^3.0.8",
     "@types/tmp": "^0.2.6",
+    "@types/yargs": "^17.0.35",
     "eslint": "^9.39.4",
     "jest": "^30.3.0",
     "jest-extended": "^7.0.0",
@@ -67,7 +69,8 @@
     "typescript": "^5.9.3"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=22.0.0",
+    "pnpm": ">=10.32.1"
   },
-  "packageManager": "yarn@4.9.1"
+  "packageManager": "pnpm@10.32.1"
 }

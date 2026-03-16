@@ -13,16 +13,17 @@ jobs:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           # NOTE: Hard Coded Node Version
           node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: yarn && yarn setup
-      - name: Retrieve version
-        run : echo "NEW_VERSION=$(jq -r '.version' package.json)" >> $GITHUB_OUTPUT
-        id: version
+      - run: pnpm run setup
       - run:
           echo "Check NPM Authentication"
-          yarn npm whoami
-      - run: yarn npm publish --access public
+          npm whoami
+      - run: pnpm publish --access public
