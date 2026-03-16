@@ -6,9 +6,8 @@ updates:
       interval: weekly
       time: '04:00'
       timezone: US/Arizona
-    open-pull-requests-limit: 3
+    # Disable version updates, only get security updates
+    open-pull-requests-limit: 0
     assignees:
-      - jsnoble
-      - godber
       - busma13
       - sotojn
