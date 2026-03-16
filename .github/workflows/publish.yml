@@ -26,4 +26,4 @@ jobs:
       - run:
           echo "Check NPM Authentication"
           npm whoami
-      - run: pnpm publish --access public
+      - run: pnpm publish --access public --no-git-checks
