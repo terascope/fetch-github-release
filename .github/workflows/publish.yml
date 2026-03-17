@@ -8,22 +8,20 @@ jobs:
   npm-publish:
     runs-on: ubuntu-latest
     permissions:
+      id-token: write
       contents: write
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           # NOTE: Hard Coded Node Version
           node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
       - run: pnpm run setup
-      - run:
-          echo "Check NPM Authentication"
-          npm whoami
       - run: pnpm publish --access public --no-git-checks
