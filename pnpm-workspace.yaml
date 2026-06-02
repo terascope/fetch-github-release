@@ -1,0 +1,11 @@
+allowBuilds:
+  unrs-resolver: true
+
+blockExoticSubdeps: true
+
+minimumReleaseAge: 1440 # 1 day
+
+trustPolicy: no-downgrade
+
+trustPolicyExclude:
+  - 'semver@6.3.1' # false positive - maintainer change
