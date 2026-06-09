@@ -5,6 +5,9 @@ blockExoticSubdeps: true
 
 minimumReleaseAge: 1440 # 1 day
 
+minimumReleaseAgeExclude:
+  - '@terascope/*'
+
 trustPolicy: no-downgrade
 
 trustPolicyExclude:
