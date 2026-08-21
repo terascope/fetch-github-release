@@ -9,7 +9,7 @@ import { download } from './download.js';
 import { rpad } from './rpad.js';
 import {
     GithubRelease, GithubReleaseAsset, ReleaseInfo
-} from './interfaces';
+} from './interfaces.js';
 
 function pass() {
     return true;
