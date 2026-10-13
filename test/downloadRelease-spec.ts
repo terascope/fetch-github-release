@@ -13,6 +13,7 @@ describe('#downloadRelease()', () => {
         nockServer();
         tmpobj = tmp.dirSync({ unsafeCleanup: true });
     });
+    afterAll(() => nock.restore());
     afterEach(() => {
         nock.cleanAll();
         tmpobj.removeCallback();

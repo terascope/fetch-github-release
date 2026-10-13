@@ -4,6 +4,7 @@ import { nockServer, releasesJson } from './utils/nockServer.js';
 
 describe('#getReleases()', () => {
     beforeEach(nockServer);
+    afterAll(() => nock.restore());
     afterEach(() => nock.cleanAll());
 
     it('gets the releases', async () => {
