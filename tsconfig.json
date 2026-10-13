@@ -4,6 +4,7 @@
         "outDir": "dist",
         "module": "nodenext",
         "moduleResolution": "nodenext",
+        "isolatedModules": true,
         "target": "ESNext",
         "skipLibCheck": true,
         "experimentalDecorators": true,

@@ -6,6 +6,7 @@ import { nockServer, fileTxt } from './utils/nockServer.js';
 
 describe('#download()', () => {
     beforeEach(nockServer);
+    afterAll(() => nock.restore());
     afterEach(() => nock.cleanAll());
 
     it('downloads a file', async () => {
