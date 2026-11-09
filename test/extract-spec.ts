@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import tmp from 'tmp';
-import extract from 'extract-zip';
+import { unzip } from '@terascope/core-utils';
 import { fileZip, fileTxt } from './utils/nockServer.js';
 
 describe('#extract()', () => {
@@ -15,7 +15,7 @@ describe('#extract()', () => {
     it('extracts a zip file', async () => {
         const fileZipPath = path.join(tmpobj.name, 'file.zip');
         fs.writeFileSync(fileZipPath, fileZip);
-        await extract(fileZipPath, { dir: tmpobj.name });
+        await unzip(fileZipPath, tmpobj.name);
         expect(fs.readFileSync(path.join(tmpobj.name, '/file/file.txt'), 'utf8'))
             .toEqual(fileTxt);
     });
