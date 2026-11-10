@@ -1,8 +1,8 @@
 import os from 'node:os';
 import fs from 'node:fs';
 import path from 'node:path';
-import extract from 'extract-zip';
 import MultiProgress from 'multi-progress';
+import { unzip } from '@terascope/core-utils';
 import { getReleases } from './getReleases.js';
 import { getLatest } from './getLatest.js';
 import { download } from './download.js';
@@ -91,9 +91,7 @@ export async function downloadRelease(
 
             await download(asset.url, dest, progress);
             if (!leaveZipped && /\.zip$/.exec(destf)) {
-                await extract(destf, {
-                    dir: outputDir
-                });
+                await unzip(destf, outputDir);
                 fs.unlinkSync(destf);
             }
         }
