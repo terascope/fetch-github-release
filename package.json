@@ -42,7 +42,7 @@
     "url": "https://github.com/terascope/fetch-github-release/issues"
   },
   "dependencies": {
-    "@terascope/core-utils": "^2.26.0",
+    "@terascope/core-utils": "^2.26.1",
     "got": "16.2.0",
     "multi-progress": "^4.0.0",
     "progress": "^2.0.3",
